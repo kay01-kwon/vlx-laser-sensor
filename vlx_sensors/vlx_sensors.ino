@@ -4,7 +4,7 @@
 #include <Wire.h>
 #include <Arduino.h>
 #include <VL53L1X.h>
-#include <vehicle_control/vl53l1xMsg.h>
+#include <dualarm_sensor_msgs/vl53l1xMsg.h>
 
 #define tca1 0x70
 #define tca2 0X71
@@ -20,7 +20,7 @@ const int num_laser_data = 7;
 uint16_t sensorread[num_laser_data*num_tca];
 
 ros::NodeHandle nh;
-vehicle_control::vl53l1xMsg laser_data;
+dualarm_sensor_msgs::vl53l1xMsg laser_data;
 
 ros::Publisher laser_chatter("laser",&laser_data);
 
